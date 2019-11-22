@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        h1{text-align: center;}
+        h1{color: firebrick}
+
+        body{background-image:url("Fodboldhold.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;}
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* Here we */
+        .topnav {
+            overflow: hidden;
+            background-color: firebrick;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            width: 22%;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;}
+
+        .div1{
+            width: 450px;
+            height: 600px;
+            border: 5px solid firebrick;
+            box-sizing: border-box;}
+        .div1 {
+            position: absolute;
+            top: 150px;
+            right: 500px;}
+         .div1 {
+            background-color: white;}
+        .div1 {
+            text-align: center;}
+
+    </style>
+</head>
+<body>
+
+
+<h1> <b>Book Din Sport </b> </h1>
+
+<div class="topnav">
+    <a class="active" href=forsiden.html>Forside</a>
+    <a href=Hold.html>Hold</a>
+    <a href=om%20os.html>Om os</a>
+    <a href=Kontakt.html>Kontakt</a>
+</div>
+
+<div class="div1">
+
+        <!-- Error beskeder er nu stylet til at se pæne ud, frem for Window klassens alert()-metode -->
+        <!-- For at forstå hvordan vi i js-koden tilgår disse id'er og manipulerer dem, så kig på valideringsmetoderne -->
+
+        <p id="validationTextRadio" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+        <p id="validationTextName" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+        <p id="validationTextPhonenumber" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+        <p id="validationTextEmail" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+        <p id="validationTextContactdate" style="color: red; margin-top: 1px; margin-bottom: 1px;"></p>
+
+
+        <form name="userContact" onsubmit="return validateInformation()" method="get">
+
+            <!-- Radio buttons -->
+            <b/>
+            <br/>
+            Tilmeldingsform
+            <br/>
+            <br/>
+            <input type="radio" class="user_rating" value="Elite"/>Elite
+            <br/>
+            <input type="radio" class="user_rating" value="Ovet"/>Øvet
+            <br/>
+            <input type="radio" class="user_rating" value="Nybegynder"/>Nybegynder
+
+            <br/>
+            <br/>
+
+            <!-- Text fields -->
+            Navn
+            <br/>
+            <input type="text" id="user_name" value="" placeholder="F.eks. Anders Andersen"/>
+            <br/>
+            <br/>
+
+            &Aringrgang
+            <br/>
+            <input type="text" id="argang" value="" placeholder="F.eks. 1999"/>
+            <br/>
+            <br/>
+
+            Telefon nr.
+            <br/>
+            <input type="text" id="telefon" value="" placeholder="F.eks. 12345678"/>
+            <br/>
+            <br/>
+
+            Email
+            <br/>
+            <input type="text" id="email" value="" placeholder="F.eks. john@gmail.com"/>
+            <br/>
+            <br/>
+
+            <!-- Dropdown lists -->
+            Tr&aeligningsdato
+            <br/>
+            <select type="text" id="contact_day">
+                <option selected disabled>-Dag-</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+
+            <select type="text" id="contact_month">
+                <option selected disabled>-M&aringned-</option>
+                <option value="Januar">Januar</option>
+                <option value="Februar">Februar</option>
+                <option value="Marts">Marts</option>
+                <option value="April">April</option>
+                <option value="Maj">Maj</option>
+                <option value="Juni">Juni</option>
+                <option value="Juli">Juli</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="Oktober">Oktober</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+
+            <select type="text" id="tidspunkt">
+                <option selected disabled>-Tidspunkt-</option>
+                <option value="18:30">18:30</option>
+                <option value="20:00">20:00</option>
+                <option value="21:30">21:30</option>
+            </select>
+            <br/>
+            <br/>
+
+            <!-- Text area for additional comments -->
+            Yderlige kommentarer
+            <br/>
+            <textarea type="text" rows="5" cols="30" id="yderligere_info" value="" placeholder="Skriv anden vigtig information her!"></textarea>
+            <br/>
+            <!-- Submit button to activate some function -->
+            <button type="submit" style="cursor: pointer;">Indsend</button>
+        </form>
+    </div>
+
+
+    <!-- Linking external Javascript file to our HTML page -->
+    <script type="application/x-javascript" src=validationForm.js></script>
+
+</body>
+</html>
